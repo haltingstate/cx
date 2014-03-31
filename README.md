@@ -56,6 +56,41 @@ Caching Compiler:
 - cx caches the AST of parsed modules
 - cx will only recompile a module if 
 
+
+cx flow control
+===============
+
+There is only for. There is no while, until
+
+```
+//while loop
+for i < 5 {
+	i++
+}
+```
+
+```
+//for loop
+for i:=0; i<5; i++ {
+
+}
+```
+
+```
+//range keyword, for key,value
+for index,value := range KeyValueExample {
+	
+}
+
+```
+
+```
+//optional: range keyword
+for num in range(0, 10) {
+	//do something
+}
+```
+
 cx program structure
 ====================
 
