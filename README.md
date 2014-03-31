@@ -60,7 +60,13 @@ Caching Compiler:
 cx flow control
 ===============
 
-There is only for. There is no while, until
+for statement:
+- There is only for. There is no while, until, not for. 
+- parens are optional.
+- Semicolons are only needed for seperating statements
+- := infers type
+
+Note: replace ":= range" with "in"
 
 ```
 //while loop
@@ -85,10 +91,58 @@ for index,value := range KeyValueExample {
 ```
 
 ```
-//optional: range keyword
-for num in range(0, 10) {
+//optional: range keyword?
+for num := range(0, 10) {
 	//do something
 }
+```
+
+--- 
+
+if statement:
+- parens are optional
+- last statement in list is return value for if
+
+``` 
+if x == false {
+	//do something
+}
+
+```
+
+```
+if x:= y+z; x==5 {
+	//returns true
+}
+```
+
+--- advanced, optional ---
+
+"get list of X that match Y"
+
+```
+select x := range List; x.Id == 5 {
+	
+}
+//can this be for statement?
+//is there better way of doing selector?
+```
+
+```
+list := select(x:= range List, x.Id =5)
+//returns list, iterator/list, condition
+
+list := for x:= range List; x.Id= 5
+
+//use "in" for iterator instead of ":= range"?
+list := select x := range List {
+	
+}
+
+python:
+a = [1,2,3,4,5]
+b = [x for x in a if x > 3]
+token: b = filter(lambda x: x > 3, a)
 ```
 
 cx program structure
