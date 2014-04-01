@@ -1,1 +1,72 @@
-fdas fsaf sfasfsdfs
+package main
+//package name
+
+//imports of external package
+import "fmt"
+
+//comments are //, # and /*,*/
+
+# this is doc string comment
+
+type Dispatcher struct {
+	int X
+	int Y
+}
+
+/*
+	Atomics:
+	int (32 or 64 bit depending on platform)
+	i32 || int32
+	i64 || int64
+	u32 || uint32
+	u64 || uint64
+	f32 || float
+	f64 || double
+	byte //unsigned char
+	bool //
+*/
+
+
+//add two ints
+func Add(x int, y int) (int) {
+	return x+y
+}
+
+//multiple return
+func AddMult(x int, y int) (int, int) {
+	return x+y,x*y
+}
+
+func Main() {
+	var x i32 = 5 //int32
+
+	y := int(x) //implicit type inference, type cast to i32
+
+	//for and if are only control structure
+	for i:=0; i<y; i++ {
+		fmt.Printf("%v \n", i) // %v infers type and auto formats
+	}
+
+	//multiple return, type inferefence, assignment
+	x1,x2 := AddMult(1,2)
+
+	//multiple return, assignment
+	var y1 int
+	var y2 int
+	y1,y2 = AddMult(1,2)
+
+
+	//struct literal
+	d1 := Dispatcher{ X: 5, Y: 6 }
+
+	//struct
+	var d2 Dispatcher
+	d2.X = 5
+	d2.Y = 6
+
+	//struct 
+	var d3 Dispatcher = Dispatcher{ X: 5, Y: 6}
+}	
+
+
+

@@ -128,6 +128,7 @@ select x := range List; x.Id == 5 {
 //is there better way of doing selector?
 ```
 
+List Selectors/Pattern Matching
 ```
 list := select(x:= range List, x.Id =5)
 //returns list, iterator/list, condition
@@ -144,6 +145,13 @@ a = [1,2,3,4,5]
 b = [x for x in a if x > 3]
 token: b = filter(lambda x: x > 3, a)
 ```
+
+Sorting for structs 
+```
+list := sort x := range; x.Index 
+
+list := sort x,y in 
+``
 
 cx program structure
 ====================
